@@ -59,7 +59,6 @@ class GameViewController: UIViewController {
             alert.addAction(action)
             self.present(alert, animated: true)
         }
-        
     }
     
     @IBAction func clear(_ sender: UIButton) {
@@ -77,13 +76,12 @@ class GameViewController: UIViewController {
     }
     
     
-    func newGame(){
+    func newGame() {
         if musicPlay{
             playMusic(sound: "music1")
         } else {
             muteMusicFunc()
         }
-        
         person.startPosition()
         clearAllShit()
         person.shitArray.removeAll()
@@ -105,9 +103,9 @@ class GameViewController: UIViewController {
         doubleTap.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(doubleTap)
         
-        //одинарный:
+        
         let oneTap = UITapGestureRecognizer(target: self, action: #selector(oneTapAction))
-        oneTap.require(toFail: doubleTap) //игнорировать один тап если тапаем дважды
+        oneTap.require(toFail: doubleTap) //ignore one tap if push double
         oneTap.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(oneTap)
     }
@@ -115,10 +113,8 @@ class GameViewController: UIViewController {
     @objc func handleSwipes(gester: UIPanGestureRecognizer) {
         let point = gester.translation(in: self.view)
         var currentPoint = CGPoint(x: 0, y: 0)
-        
         switch gester.state {
         case .began: countSeconds = 0; timerStart()
-            //case .changed: timerStart()
         case .ended: timerStop()
         default: break
         }
@@ -146,22 +142,22 @@ class GameViewController: UIViewController {
     }
     
     
-    func timerStart(){
+    func timerStart() {
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 0.28, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
     }
     
-    @objc func timerCount(){
+    @objc func timerCount() {
         countSeconds += 1
         movePerson(direction: direction)
     }
     
-    func timerStop(){
+    func timerStop() {
         timer.invalidate()
         countSeconds = 0
     }
     
-    func movePerson(direction: PersonModel.Directions){
+    func movePerson(direction: PersonModel.Directions) {
         centerLabel.text = ""
         let portalImage = level.map[level.levelCount - 1].portal
         
@@ -198,9 +194,10 @@ class GameViewController: UIViewController {
             playSound(sound: "shit1")
         }
         
-        if !moveCountCheck(){
-            
+        if !moveCountCheck() {
             playSound(sound: "wrong")
+            alertText(text: "Your moves are over!")
+            timerStop()
             newGame()
         }
         updScreenInfo()
@@ -209,7 +206,7 @@ class GameViewController: UIViewController {
         
         for i in portalImage {
             if i != nil {
-                if person.personImage.frame.intersects(i!.portalImage.frame){
+                if person.personImage.frame.intersects(i!.portalImage.frame) {
                     playJingle(jingle: "flushing")
                     randomPlacePerson()
                     person.personImage.fadeOut()
@@ -221,7 +218,7 @@ class GameViewController: UIViewController {
     }
     
     
-    func randomPlacePerson(){
+    func randomPlacePerson() {
         let randomX = CGFloat.random(in: 0...(screen_width - personSides))
         let randomY = CGFloat.random(in: 0...(screen_height - personSides))
         //let outCG = CGRect(x: randomX, y: randomY, width: personSides, height: personSides)
@@ -239,6 +236,8 @@ class GameViewController: UIViewController {
         }
         return true
     }
+    
+    //MARK: Check for Win/Loss
     
     func goalsCountCheck() {
         let personPoint = CGRect(x: person.xPerson, y: person.yPerson, width: personSides, height: personSides)
@@ -285,8 +284,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    func installMap(){
-        
+    //MARK: Install Map Function
+    
+    func installMap() {
         countdown()
         let currentBlocksV = level.map[level.levelCount - 1]
         for i in currentBlocksV.blocksV {
@@ -303,7 +303,6 @@ class GameViewController: UIViewController {
         }
         movesLeft = level.map[level.levelCount - 1].moves
         goalsLeft = level.map[level.levelCount - 1].goals
-        
     }
     
     func clearAllShit(){
@@ -386,6 +385,8 @@ class GameViewController: UIViewController {
         return outString
     }
     
+    //MARK: Countdown Function
+    
     func countdown() {
         seconds = 30
         countdownTimer.invalidate()
@@ -401,6 +402,8 @@ class GameViewController: UIViewController {
             alertText(text: "Time is over...")
         }
     }
+    
+    //MARK: Alert of End Game
     
     func alertText(text: String) {
         playJingle(jingle: "wrong")
