@@ -8,8 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
-    
+class GameViewController: UIViewController {
     
     @IBOutlet weak var clearBtn: UIButton!
     @IBOutlet weak var muteMusic: UIButton!
@@ -32,7 +31,7 @@ class ViewController: UIViewController {
     var countdownTimer = Timer()
     var seconds = 30
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playJingle(jingle: "jingle")
@@ -91,36 +90,6 @@ class ViewController: UIViewController {
         installMap()
         updScreenInfo()
     }
-    
-    //MARK: UISwipeGestureRecognizer
-    /*
-     func swipeObserver() {
-     
-     //MARK: свайп вправо:
-     swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
-     //определим какой свайп:
-     swipeRight.direction = .right
-     //добавим свайп:
-     self.view.addGestureRecognizer(swipeRight)
-     
-     //MARK: свайп влево:
-     swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
-     swipeLeft.direction = .left
-     self.view.addGestureRecognizer(swipeLeft)
-     
-     //MARK: свайп вверх:
-     swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
-     swipeUp.direction = .up
-     self.view.addGestureRecognizer(swipeUp)
-     
-     //MARK: свайп вниз:
-     swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
-     swipeDown.direction = .down
-     self.view.addGestureRecognizer(swipeDown)
-     }
-     */
-    
-    
     
     //MARK: UIPanGestureRecognizer
     func swipeObserver() {
@@ -260,8 +229,6 @@ class ViewController: UIViewController {
         person.yPerson = randomY
     }
     
-    
-    
     func moveCheck() -> Bool {
         let personPoint = CGRect(x: person.xPerson, y: person.yPerson, width: personSides, height: personSides)
         let currentBlocksV = level.map[level.levelCount - 1]
@@ -298,7 +265,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
     
     @objc func doubleTapAction() {
         movePerson(direction: .doubleTap)
@@ -410,7 +376,7 @@ class ViewController: UIViewController {
         } catch {
             print("error")
         }
-    
+        
         playerSfx.numberOfLoops = 0
         playerSfx.play()
     }

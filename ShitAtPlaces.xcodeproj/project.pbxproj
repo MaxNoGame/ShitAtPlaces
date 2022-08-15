@@ -31,7 +31,7 @@
 		5082C8342834E55200C06001 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082C8332834E55200C06001 /* LevelModel.swift */; };
 		50DAADB12833D171000037FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAADB02833D171000037FC /* AppDelegate.swift */; };
 		50DAADB32833D171000037FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAADB22833D171000037FC /* SceneDelegate.swift */; };
-		50DAADB52833D171000037FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAADB42833D171000037FC /* ViewController.swift */; };
+		50DAADB52833D171000037FC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAADB42833D171000037FC /* GameViewController.swift */; };
 		50DAADB82833D171000037FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DAADB62833D171000037FC /* Main.storyboard */; };
 		50DAADBD2833D172000037FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DAADBB2833D172000037FC /* LaunchScreen.storyboard */; };
 		50DAADC52833D95F000037FC /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DAADC42833D95F000037FC /* PersonModel.swift */; };
@@ -61,10 +61,10 @@
 		50384007283D16730028D2ED /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music1.mp3; sourceTree = "<group>"; };
 		5038401B283D28E40028D2ED /* smile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = smile.mp3; sourceTree = "<group>"; };
 		5082C8332834E55200C06001 /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
-		50DAADAD2833D171000037FC /* GestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DAADAD2833D171000037FC /* ShitAtPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShitAtPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DAADB02833D171000037FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50DAADB22833D171000037FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		50DAADB42833D171000037FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50DAADB42833D171000037FC /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		50DAADB72833D171000037FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50DAADBC2833D172000037FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50DAADBE2833D172000037FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				50F61850283CE37C00A1E2EF /* WinViewController.swift */,
-				50DAADB42833D171000037FC /* ViewController.swift */,
+				50DAADB42833D171000037FC /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 		50DAADAE2833D171000037FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50DAADAD2833D171000037FC /* GestureRecognizer.app */,
+				50DAADAD2833D171000037FC /* ShitAtPlaces.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50DAADAC2833D171000037FC /* GestureRecognizer */ = {
+		50DAADAC2833D171000037FC /* ShitAtPlaces */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50DAADC12833D172000037FC /* Build configuration list for PBXNativeTarget "GestureRecognizer" */;
+			buildConfigurationList = 50DAADC12833D172000037FC /* Build configuration list for PBXNativeTarget "ShitAtPlaces" */;
 			buildPhases = (
 				50DAADA92833D171000037FC /* Sources */,
 				50DAADAA2833D171000037FC /* Frameworks */,
@@ -183,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = GestureRecognizer;
+			name = ShitAtPlaces;
 			productName = GestureRecognizer;
-			productReference = 50DAADAD2833D171000037FC /* GestureRecognizer.app */;
+			productReference = 50DAADAD2833D171000037FC /* ShitAtPlaces.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 50DAADA82833D171000037FC /* Build configuration list for PBXProject "GestureRecognizer" */;
+			buildConfigurationList = 50DAADA82833D171000037FC /* Build configuration list for PBXProject "ShitAtPlaces" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,7 +216,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50DAADAC2833D171000037FC /* GestureRecognizer */,
+				50DAADAC2833D171000037FC /* ShitAtPlaces */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +261,7 @@
 			files = (
 				5082C8342834E55200C06001 /* LevelModel.swift in Sources */,
 				50DAADC52833D95F000037FC /* PersonModel.swift in Sources */,
-				50DAADB52833D171000037FC /* ViewController.swift in Sources */,
+				50DAADB52833D171000037FC /* GameViewController.swift in Sources */,
 				50F61851283CE37C00A1E2EF /* WinViewController.swift in Sources */,
 				50DAADB12833D171000037FC /* AppDelegate.swift in Sources */,
 				50DAADB32833D171000037FC /* SceneDelegate.swift in Sources */,
@@ -469,7 +469,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50DAADA82833D171000037FC /* Build configuration list for PBXProject "GestureRecognizer" */ = {
+		50DAADA82833D171000037FC /* Build configuration list for PBXProject "ShitAtPlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50DAADBF2833D172000037FC /* Debug */,
@@ -478,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50DAADC12833D172000037FC /* Build configuration list for PBXNativeTarget "GestureRecognizer" */ = {
+		50DAADC12833D172000037FC /* Build configuration list for PBXNativeTarget "ShitAtPlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50DAADC22833D172000037FC /* Debug */,

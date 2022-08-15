@@ -50,7 +50,6 @@ class Portals {
         self.xPortal = xPortal
         self.yPortal = yPortal
         portalImage.frame = .init(x: self.xPortal, y: self.yPortal, width: Int(screenBounds.width) / 6, height: Int(screenBounds.width) / 6)
-        
     }
 }
 
@@ -62,6 +61,8 @@ struct Builder {
     var goals: Int
 }
 
+//MARK: Level builder.
+//I know it looks terrible, but at the moment when I wrote this, it was the best I could))
 
 class Level {
     var levelCount = 1
@@ -70,7 +71,6 @@ class Level {
                Builder(blocksV: [BlockVertical(xBlockVertical: 60, yBlockVertival: 650, widthBlockVertival: widthBlockV*2, heightBlockVertival: widthBlockV), BlockVertical(xBlockVertical: 138, yBlockVertival: 650, widthBlockVertival: widthBlockV*2, heightBlockVertival: widthBlockV), BlockVertical(xBlockVertical: 70, yBlockVertival: 300, widthBlockVertival: widthBlockV, heightBlockVertival: heightBlockV)], places: [PlacesForShit(xPlace: 80, yPlace: 200), PlacesForShit(xPlace: 50, yPlace: 550)], portal: [Portals(xPortal: 250, yPortal: 550)], moves: 43, goals: 2),
                
                Builder(blocksV: [BlockVertical(xBlockVertical: 111, yBlockVertival: 650, widthBlockVertival: heightBlockV, heightBlockVertival: widthBlockV), BlockVertical(xBlockVertical: 195, yBlockVertival: 650, widthBlockVertival: heightBlockV, heightBlockVertival: widthBlockV), BlockVertical(xBlockVertical: 250, yBlockVertival: 300, widthBlockVertival: widthBlockV, heightBlockVertival: heightBlockV), BlockVertical(xBlockVertical: 101, yBlockVertival: 300, widthBlockVertival: widthBlockV, heightBlockVertival: heightBlockV)], places: [PlacesForShit(xPlace: 300, yPlace: 300), PlacesForShit(xPlace: 26, yPlace: 300), PlacesForShit(xPlace: 162, yPlace: 550)], portal: [Portals(xPortal: 160, yPortal: 420)], moves: 57, goals: 3)
-               
     ]
 }
 
